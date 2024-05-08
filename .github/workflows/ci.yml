@@ -134,6 +134,9 @@ jobs:
     - name: Run tests
       shell: bash
       run: |
+        pwd
+        ls -la
+        ls -la .datadog
         npm run test-ci
         cp coverage/lcov.info "coverage/${{ matrix.name }}.lcov"
       env:
