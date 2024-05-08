@@ -125,7 +125,7 @@ jobs:
 
     - name: Configure Datadog Test Visibility
       id: configure-datadog-test-visibility
-      uses: nikita-tkachenko-datadog/gha-composite-test@v31
+      uses: nikita-tkachenko-datadog/gha-composite-test@v32
       with:
         languages: js
         service-name: ci-test-project-gha
@@ -134,8 +134,6 @@ jobs:
     - name: Run tests
       shell: bash
       run: |
-        pwd
-        ls -la
         ls -la .datadog
         npm run test-ci
         cp coverage/lcov.info "coverage/${{ matrix.name }}.lcov"
