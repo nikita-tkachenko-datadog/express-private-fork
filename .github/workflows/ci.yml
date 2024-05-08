@@ -73,58 +73,6 @@ jobs:
           node-version: "3.3"
           npm-i: mocha@3.5.3 nyc@10.3.2 supertest@2.0.0
 
-        - name: Node.js 4.x
-          node-version: "4.9"
-          npm-i: mocha@5.2.0 nyc@11.9.0 supertest@3.4.2
-
-        - name: Node.js 5.x
-          node-version: "5.12"
-          npm-i: mocha@5.2.0 nyc@11.9.0 supertest@3.4.2
-
-        - name: Node.js 6.x
-          node-version: "6.17"
-          npm-i: mocha@6.2.2 nyc@14.1.1 supertest@3.4.2
-
-        - name: Node.js 7.x
-          node-version: "7.10"
-          npm-i: mocha@6.2.2 nyc@14.1.1 supertest@6.1.6
-
-        - name: Node.js 8.x
-          node-version: "8.17"
-          npm-i: mocha@7.2.0 nyc@14.1.1
-
-        - name: Node.js 9.x
-          node-version: "9.11"
-          npm-i: mocha@7.2.0 nyc@14.1.1
-
-        - name: Node.js 10.x
-          node-version: "10.24"
-          npm-i: mocha@8.4.0
-
-        - name: Node.js 11.x
-          node-version: "11.15"
-          npm-i: mocha@8.4.0
-
-        - name: Node.js 12.x
-          node-version: "12.22"
-          npm-i: mocha@9.2.2
-
-        - name: Node.js 13.x
-          node-version: "13.14"
-          npm-i: mocha@9.2.2
-
-        - name: Node.js 14.x
-          node-version: "14.20"
-
-        - name: Node.js 15.x
-          node-version: "15.14"
-
-        - name: Node.js 16.x
-          node-version: "16.20"
-
-        - name: Node.js 17.x
-          node-version: "17.9"
-
         - name: Node.js 18.x
           node-version: "18.19"
 
@@ -190,7 +138,7 @@ jobs:
         (npm -s ls --depth=0 ||:) | awk -F'[ @]' 'NR>1 && $2 { print $2 "=" $3 }' >> "$GITHUB_OUTPUT"
 
     - name: Configure Datadog Test Visibility
-      uses: nikita-tkachenko-datadog/gha-composite-test@v23
+      uses: nikita-tkachenko-datadog/gha-composite-test@v24
       with:
         languages: js
         service-name: ci-test-project-gha
