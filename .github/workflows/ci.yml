@@ -190,7 +190,7 @@ jobs:
         (npm -s ls --depth=0 ||:) | awk -F'[ @]' 'NR>1 && $2 { print $2 "=" $3 }' >> "$GITHUB_OUTPUT"
 
     - name: Configure Datadog Test Visibility
-      uses: nikita-tkachenko-datadog/gha-composite-test@v22
+      uses: nikita-tkachenko-datadog/gha-composite-test@v23
       with:
         languages: js
         service-name: ci-test-project-gha
