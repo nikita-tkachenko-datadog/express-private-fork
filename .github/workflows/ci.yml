@@ -125,7 +125,7 @@ jobs:
 
     - name: Configure Datadog Test Visibility
       id: configure-datadog-test-visibility
-      uses: nikita-tkachenko-datadog/gha-composite-test@v30
+      uses: nikita-tkachenko-datadog/gha-composite-test@v31
       with:
         languages: js
         service-name: ci-test-project-gha
