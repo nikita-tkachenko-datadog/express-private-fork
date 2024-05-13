@@ -138,7 +138,7 @@ jobs:
         npm run test-ci
         cp coverage/lcov.info "coverage/${{ matrix.name }}.lcov"
       env:
-        NODE_OPTIONS: -r $DD_TRACE_PACKAGE
+        NODE_OPTIONS: -r ${{ env.DD_TRACE_PACKAGE }}
 
     - name: Lint code
       if: steps.list_env.outputs.eslint != ''
