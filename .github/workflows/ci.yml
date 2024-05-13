@@ -125,7 +125,7 @@ jobs:
 
     - name: Configure Datadog Test Visibility
       id: configure-datadog-test-visibility
-      uses: nikita-tkachenko-datadog/gha-composite-test@v32
+      uses: nikita-tkachenko-datadog/gha-composite-test@v43
       with:
         languages: js
         service-name: ci-test-project-gha
@@ -138,7 +138,7 @@ jobs:
         npm run test-ci
         cp coverage/lcov.info "coverage/${{ matrix.name }}.lcov"
       env:
-        NODE_OPTIONS: ${{ steps.configure-datadog-test-visibility.outputs.node-options }}
+        NODE_OPTIONS: -r $DD_TRACE_PACKAGE
 
     - name: Lint code
       if: steps.list_env.outputs.eslint != ''
